@@ -3,12 +3,6 @@
 ## Overview
 
 This project is a **Retrieval-Augmented Generation (RAG)** chatbot that enables users to upload PDF documents, process them in real-time, and ask questions to receive context-aware answers. Built with **Streamlit** for a dynamic web interface, **LangChain** for the RAG pipeline, **Groq** for language model integration, **FAISS** for efficient vector storage, and **HuggingFace** embeddings for semantic retrieval, the chatbot supports live PDF uploads, streaming word-by-word responses, and conversational features like small talk and chat history clearing.
-
-The project consists of three main scripts:
-- `create_memory.py`: Processes PDFs from a directory and creates a persistent FAISS vector database.
-- `connect_memory.py`: Command-line script to query the pre-built FAISS database.
-- `main.py`: Streamlit web app for live PDF uploads, real-time querying, and conversational interactions.
-
 ## Features
 - **Ingestion**: Search arXiv API or upload PDFs; persistent storage in `./documents`.
 - **Processing**: Chunking, embedding (HuggingFace MiniLM), and FAISS indexing per paper.
@@ -39,4 +33,8 @@ The project consists of three main scripts:
    ```bash
    git clone <repository-url>
    cd <repository-folder>
+2. Create virtual env and install deps:
+3. Set up `.env`:
+   
+### Run the App
    
