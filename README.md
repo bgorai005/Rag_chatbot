@@ -1,4 +1,4 @@
-# RAG Chatbot with Live PDF Upload and Streaming Responses
+# AI-Powered Research Summarizer
 
 ## Overview
 
@@ -10,19 +10,29 @@ The project consists of three main scripts:
 - `main.py`: Streamlit web app for live PDF uploads, real-time querying, and conversational interactions.
 
 ## Features
+- **Ingestion**: Search arXiv API or upload PDFs; persistent storage in `./documents`.
+- **Processing**: Chunking, embedding (HuggingFace MiniLM), and FAISS indexing per paper.
+- **RAG Pipeline**: Semantic search (k=3-5 chunks) + Llama 3 70B generation for accurate, cited responses.
+- **Insights**: Grounded Q&A, section-wise summaries, key highlights, and multi-paper comparisons.
+- **Export**: Structured Markdown/PDF reports for sharing.
+- **Viz**: Sidebar charts for retrieval relevance scores.
 
-- **Live PDF Upload**: Upload PDFs through the Streamlit UI, processed in-memory for real-time question answering.
-- **Streaming Responses**: Displays answers word-by-word, mimicking ChatGPT’s conversational style, with an option for pause-and-display-all mode.
-- **Conversational Features**: Handles small talk (e.g., "what's up?", "hello") with friendly responses and supports chat history clearing via text command ("clear") or button.
-- **Semantic Retrieval**: Uses FAISS and HuggingFace’s `sentence-transformers/all-MiniLM-L6-v2` for accurate, context-aware answers from document chunks.
-- **Robust Error Handling**: Manages invalid PDFs, missing databases, and query errors with user-friendly feedback.
+## Tech Stack
+- **Frontend**: Streamlit (interactive tabs, session state).
+- **RAG Core**: LangChain (chains, splitters, embeddings), FAISS (vector store).
+- **LLM**: Groq (Llama 3 70B, low-latency inference).
+- **Ingestion**: arXiv API, PyMuPDF (PDF extraction).
+- **Export**: FPDF (simple PDF gen).
+- **Config**: dotenv for API keys; modular Python files.
 
-## Prerequisites
+## Quick Start
 
-- Python 3.8+
-- A Groq API key (obtain from [Groq](https://console.groq.com/))
-- Installed dependencies (see Installation below)
+### Prerequisites
+- Python 3.10+
+- Groq API key (free tier: [console.groq.com](https://console.groq.com))
 
+### Installation
+1. Clone the repo:
 ## Installation
 
 1. **Clone the Repository**:
